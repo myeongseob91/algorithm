@@ -1,0 +1,17 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class ArrayNamuzi {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Set set = new HashSet();
+        int[] inputArr = new int[10];
+
+        for (int i = 0; i < inputArr.length ; i++) {
+            inputArr[i] = sc.nextInt() % 42;
+            set.add(inputArr[i]);
+        }
+            System.out.println(set.size());
+    }
+}
