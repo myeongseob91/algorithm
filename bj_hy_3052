@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] numberArry = new int[10];
+        ArrayList<Integer> restArry = new ArrayList<>();
+        ArrayList<Integer> tempArry = new ArrayList<>();
+
+        for(int i=0; i<numberArry.length; i++){
+            numberArry[i] = sc.nextInt();
+            restArry.add(numberArry[i]%42);
+        }
+
+        for(int j=0; j<restArry.size(); j++){
+            if(!tempArry.contains(restArry.get(j))){
+                tempArry.add(restArry.get(j));
+            }
+        }
+        System.out.println(tempArry.size());
+    }
+
+}
