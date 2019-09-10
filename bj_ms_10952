@@ -1,34 +1,34 @@
 Solution 1
-
- public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        while(true){
-
-
-        int a = input.nextInt();
-        int b = input.nextInt();
-            System.out.println(a+b);
-        if(a==0 && b==0){
-            break;
-        }
-        }
-
-    }
-------------------------------------------------------------------------------------------------------------------------
-   Solution 2
    
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        ArrayList<String> list = new ArrayList<>();
-        String str = "";
+public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    ArrayList<String> list = new ArrayList<>();
+    String str = "";
 
-        while(!str.equals("0 0")){
-            str = input.nextLine();
-            list.add(str);
-        }
-
-        for (int i = 0; i < list.size()-1; i++) {
-            System.out.println(Integer.parseInt(list.get(i).split(" ")[0]) + Integer.parseInt(list.get(i).split(" ")[1]));
-        }
-
+    while(!str.equals("0 0")){
+        str = input.nextLine();
+        list.add(str);
     }
+
+    for (int i = 0; i < list.size()-1; i++) {
+        System.out.println(Integer.parseInt(list.get(i).split(" ")[0]) + Integer.parseInt(list.get(i).split(" ")[1]));
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------
+
+Solution 2
+
+public static void main(String[] args) {
+   Scanner input = new Scanner(System.in);
+   while(true){
+      int a = input.nextInt();
+      int b = input.nextInt();
+          System.out.println(a+b);
+      if(a==0 && b==0){
+          break;
+      }
+   }
+}
+
+
