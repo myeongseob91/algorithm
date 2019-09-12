@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class 재귀10872 {
+
+    public static long  total = 1;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int value = sc.nextInt();
+        factorial(value);
+    }
+
+    public static void factorial(int a){
+        long value = total * a;
+        total = value;
+
+        if(a == 0) {
+            System.out.println(1);
+            return;
+        }
+
+        if(a == 1 ) {
+            System.out.println(total);
+            return;
+        }
+
+        factorial(a-1);
+
+    }
+}
