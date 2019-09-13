@@ -1,0 +1,42 @@
+----------메모리초과------------
+
+public class Main {
+
+    static boolean [] bboo = new boolean[10036];
+    public static void main(String[] args) {
+
+        for (int i = 1; i < 10001; i++) {
+            new Main().d(i);
+        }
+
+        for (int i = 1; i < 10001; i++) {
+            if(bboo[i] == false){
+                System.out.println(i);
+            }
+        }
+
+
+    }
+
+
+    public  void d(Integer a){
+        if(a > 10000) {
+            return;
+        }
+        String[] str = a.toString().split("");
+        int total = 0;
+        total = total + a;
+
+        for (int i = 1; i < str.length; i++) {
+            total += Integer.parseInt(str[i]);
+        }
+        bboo[total] = true;
+        /*System.out.println(total);*/
+
+        d(total);
+
+    }
+
+
+
+}
