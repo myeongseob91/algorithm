@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        String a = str.split("\\s")[0];
+        String b = str.split("\\s")[1];
+
+        String[] aArry = new String[3];
+        String[] bArry = new String[3];
+
+        String aTemp = "";
+        String bTemp = "";
+
+        int aInt = 0;
+        int bInt = 0;
+
+        for(int i = 0; i<3; i++){
+            aArry[i] = a.charAt(i)+"";
+        }
+
+        for(int j= 0; j<3; j++){
+            bArry[j] = b.charAt(j)+"";
+        }
+
+        for(int i=2; i>=0; i--){
+            aTemp += aArry[i];
+        }
+
+        for(int j=2; j>=0; j--){
+            bTemp += bArry[j];
+        }
+
+        aInt = Integer.parseInt(aTemp);
+        bInt = Integer.parseInt(bTemp);
+
+        if(aInt > bInt){
+            System.out.println(aInt);
+        } else {
+            System.out.println(bInt);
+        }
+
+    }
+
+}
