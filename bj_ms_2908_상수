@@ -1,3 +1,15 @@
+char 형 더하기할시 주의필요함
+
+아스키코드 값으로 더해짐.
+
++ ""; 이렇게 문자열로 치환할경우 문자열붙이기 
+
+
+
+
+
+
+
 --정답은 잘나오나 제출시에 runtime Error--- split 이 문제인것같음..
 
 import java.util.Scanner;
@@ -12,6 +24,31 @@ public class 상수_2908 {
 
         String doosooFirstReverseStr = doosoo[0].split("")[3] + doosoo[0].split("")[2] + doosoo[0].split("")[1];
         String doosooSecondReverseStr = doosoo[1].split("")[3] + doosoo[1].split("")[2] + doosoo[1].split("")[1];
+
+        if(Integer.parseInt(doosooFirstReverseStr) > Integer.parseInt(doosooSecondReverseStr)) {
+            System.out.println(doosooFirstReverseStr);
+        } else {
+            System.out.println(doosooSecondReverseStr);
+        }
+    }
+}
+
+
+--------------------------
+
+charAt 으로바꿔서 정답
+
+import java.util.Scanner;
+
+public class 상수_2908 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str=  sc.nextLine();
+
+        String[] doosoo = str.split("\\s"); // 734  -> 공백 7 3 4
+
+        String doosooFirstReverseStr = doosoo[0].charAt(2) + "" + doosoo[0].charAt(1) + doosoo[0].charAt(0);
+        String doosooSecondReverseStr = doosoo[1].charAt(2) + "" +  doosoo[1].charAt(1) + doosoo[1].charAt(0);
 
         if(Integer.parseInt(doosooFirstReverseStr) > Integer.parseInt(doosooSecondReverseStr)) {
             System.out.println(doosooFirstReverseStr);
