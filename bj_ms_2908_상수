@@ -1,0 +1,22 @@
+--정답은 잘나오나 제출시에 runtime Error--- split 이 문제인것같음..
+
+import java.util.Scanner;
+
+public class 상수_2908 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str=  sc.nextLine();
+
+        String[] doosoo = str.split(" "); // 734  -> 공백 7 3 4
+
+
+        String doosooFirstReverseStr = doosoo[0].split("")[3] + doosoo[0].split("")[2] + doosoo[0].split("")[1];
+        String doosooSecondReverseStr = doosoo[1].split("")[3] + doosoo[1].split("")[2] + doosoo[1].split("")[1];
+
+        if(Integer.parseInt(doosooFirstReverseStr) > Integer.parseInt(doosooSecondReverseStr)) {
+            System.out.println(doosooFirstReverseStr);
+        } else {
+            System.out.println(doosooSecondReverseStr);
+        }
+    }
+}
