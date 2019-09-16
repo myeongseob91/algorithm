@@ -1,0 +1,35 @@
+Arrays.fill; 과 아스키코드
+
+-------------------------
+
+import java.util.Scanner;
+
+public class 알파벳찾기_10809 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[] alpabet = new int[26];
+        for (int i = 0; i < alpabet.length; i++) {
+            alpabet[i] = -1;
+        }
+
+        String S = sc.next();
+
+        for (int i = 0; i < S.length(); i++) {
+            int alpaArray = S.charAt(i) % 97;
+            if(alpabet[alpaArray] != -1) {
+             continue;
+            } else  {
+                alpabet[alpaArray] = i;
+            }
+
+        }
+
+        for (int i = 0; i < alpabet.length; i++) {
+            System.out.print(alpabet[i]+" ");
+        }
+
+        /*a b c d e f g h i j k l m n o p q r s t u v w x y z*/
+        //알파벳 아스키코드97~122
+    }
+}
