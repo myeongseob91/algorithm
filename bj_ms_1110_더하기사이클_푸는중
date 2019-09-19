@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class 더하기사이클_1110번 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int userInput = sc.nextInt();
+        int soonew = 0;
+        int cycleCount = 0;
+        while (userInput != soonew) {
+            int ten = userInput/10;
+            int one = userInput%10;
+            int oneone = ten+one;
+            soonew = (one * 10) + oneone;
+            cycleCount++;
+        }
+        System.out.println(cycleCount);
+
+
+    }
+}
