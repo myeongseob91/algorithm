@@ -1,3 +1,40 @@
+
+
+import java.util.Scanner;
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int userInput = sc.nextInt();
+        
+        int immurable = userInput;
+        
+        int soonew = 0;
+        int cycleCount = 0;
+        while (true) {
+            int ten = userInput/10;
+            int one = userInput%10;
+            int oneone = ten+one;
+            userInput = (one * 10) + oneone %10;
+            cycleCount++;
+            if(userInput == immurable) {
+            	break;
+            }
+        }
+        System.out.println(cycleCount);
+
+
+    }
+}
+
+
+
+///////////////
+
 import java.util.Scanner;
 
 public class 더하기사이클_1110번 {
