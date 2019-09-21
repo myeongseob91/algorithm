@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // input
+        int n = sc.nextInt(); //ex. 26
+
+        //process
+        String nStr = Integer.toString(n); //int n을 String 으로 형변환
+        String[] number = new String[2];
+        int nResult = 0; //number[1]에 들어갈 수
+        int cycleCnt = 0;
+        if(n<10){ //입력받은수가 10보다 작을 때
+            number[0] = "0";
+            number[1] = nStr;
+        } else {
+            for(int i=0; i<nStr.length(); i++){
+                number[i] = nStr.charAt(i)+"";
+            }
+        }
+
+        while(true){
+            nResult = Integer.parseInt(number[0]) + Integer.parseInt(number[1]);
+            number[0] = number[1];
+            String nResultStr = Integer.toString(nResult);
+            if(nResultStr.length()>1){
+                number[1] = nResultStr.charAt(nResultStr.length()-1)+"";
+            } else {
+                number[1] = Integer.toString(nResult);
+            }
+            cycleCnt++;
+
+            if(nStr.length()<2){
+                nStr = "0"+nStr;
+            }
+
+            if(nStr.equals(number[0]+number[1])){
+                break;
+            }
+        }
+        System.out.println(cycleCnt);
+    }
+}
