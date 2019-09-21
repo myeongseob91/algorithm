@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class 음계_2920 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        String [] ss = str.split(" ");
+        int one = Integer.parseInt(ss[0]);
+        int two = Integer.parseInt(ss[1]);
+        int three = Integer.parseInt(ss[2]);
+        int four = Integer.parseInt(ss[3]);
+        int five = Integer.parseInt(ss[4]);
+        int six = Integer.parseInt(ss[5]);
+        int seven = Integer.parseInt(ss[6]);
+        int eight = Integer.parseInt(ss[7]);
+
+        if(one < two &&
+                two < three &&
+                three < four &&
+                four < five &&
+                five < six &&
+                six < seven &&
+                seven < eight) {
+            System.out.print("ascending");
+        } else if(one > two &&
+                two > three &&
+                three > four &&
+                four > five &&
+                five > six &&
+                six > seven &&
+                seven > eight) {
+            System.out.print("descending");
+        } else {
+            System.out.print("mixed");
+        }
+    }
+}
