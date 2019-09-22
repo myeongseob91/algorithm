@@ -1,3 +1,5 @@
+// 반올림하는법에 대해서 배움 DecimalFormat 타입도 처음써봤음
+ 근데 자꾸 
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -35,7 +37,7 @@ public class 평균은넘겠지 {
             //int value = goodStudent / (list.size() - 1 * 100);
             //double value = ((list.size()-1) * 100) / (double)goodStudent;
             int total = list.size() - 1;
-            double rate = ((double)goodStudent/ (double)total) * 100.00;
+            double rate = ((double)goodStudent/ (double)total) * 100;
             //String dispPattern = "#.000";
             //DecimalFormat form = new DecimalFormat(dispPattern);
 
