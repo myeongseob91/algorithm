@@ -1,0 +1,50 @@
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class 평균은넘겠지 {
+    //줄바꿈이 정답 체점에 영향을 미치는지
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int rowCount = sc.nextInt();
+        ArrayList<Integer> list = null;
+        for (int i = 0; i < rowCount; i++) {
+            int columnCount = sc.nextInt();
+            list = new ArrayList();
+            list.add(columnCount);
+            for (int j = 0; j < columnCount ; j++) {
+                list.add(sc.nextInt());
+            }
+
+            int sum = 0;
+            for (int j = 1; j < list.size(); j++) {
+               sum+= list.get(j);
+            }
+            int average = sum/(list.size()-1);
+
+            int goodStudent = 0;
+            for (int j = 0; j < list.size() ; j++) {
+                if(list.get(j) > average) {
+                    goodStudent++;
+                }
+            }
+
+            //int value = goodStudent / (list.size() - 1 * 100);
+            //double value = ((list.size()-1) * 100) / (double)goodStudent;
+            int total = list.size() - 1;
+            double rate = ((double)goodStudent/ (double)total) * 100.00;
+            //String dispPattern = "#.000";
+            //DecimalFormat form = new DecimalFormat(dispPattern);
+
+            //System.out.println(Math.round(rate* 100) / 100.0 + "%");
+
+            //System.out.printf("%.2f,rate");
+            System.out.printf("%.3f", rate).println("%");
+
+        }
+        sc.close();
+    }
+}
