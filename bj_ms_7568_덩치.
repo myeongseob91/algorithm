@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+ 
+
+public class 덩치_7568 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int loopCount = sc.nextInt();
+
+		sc.nextLine();
+
+		int [][] persons = new int[loopCount][2];
+
+		for (int i = 0; i < loopCount; i++) {
+
+			String []str = sc.nextLine().split(" ");			
+
+			persons[i][0] = Integer.parseInt(str[0]); 
+
+			persons[i][1] = Integer.parseInt(str[1]);
+
+		}
+
+		
+
+		int k = 0;
+
+		for (int i = 0; i < loopCount; i++) {
+
+			for (int j = 0; j < persons.length; j++) {
+
+				if(persons[i][0] < persons[j][0] && persons[i][1] < persons[j][1]) {
+
+					k++;
+
+				}
+
+				
+
+			}			
+
+			System.out.print(k+1+" ");
+
+			k=0;
+
+		}
+
+		
+
+		sc.close();
+
+		
+
+	}
+
+}
