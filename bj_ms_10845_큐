@@ -1,1 +1,86 @@
 
+왜 런타임에러
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class Main {
+	LinkedList<Integer> list = new LinkedList<>();
+	
+	public void push(Integer value) {
+		list.addFirst(value);
+	}
+	
+	public int pop() {
+		try {
+			return  list.removeLast();
+		} catch (Exception e) {
+			return -1;
+			// TODO: handle exception
+		}
+	}
+	
+	public int size() {
+		return list.size();
+	}
+	
+	public int empty() {
+		if(list.isEmpty()) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+	
+	public int front() {
+		if(list.isEmpty()) {
+			return -1;
+		}
+		
+		return list.getLast();
+	}
+	
+	public int back() {
+		if(list.isEmpty()) {
+			return -1;
+		}
+		
+		return list.getFirst();
+	}
+	
+	
+	public static void main(String []args) {
+		Main queue = new Main();
+		  Scanner sc = new Scanner(System.in); 
+		  int inputCount = sc.nextInt(); 
+		  sc.nextLine();
+		  for (int i = 1; i <= inputCount; i++) { 
+			  String[]inputStr = sc.nextLine().split(" ");
+				 switch (inputStr[0]) {
+				case "push":
+					queue.push(Integer.parseInt(inputStr[1]));
+					break;
+				case "pop":
+					System.out.println(queue.pop());
+					break;
+				case "size":
+					System.out.println(queue.size());
+					break;
+				case "empty":
+					System.out.println(queue.empty());
+					break;
+				case "front":
+					System.out.println(queue.front());
+					break;
+				case "back":
+					System.out.println(queue.back());
+					break;
+				default:
+					break;
+				}
+		  } 
+	}
+	
+	
+	
+}
