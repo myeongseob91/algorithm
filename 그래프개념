@@ -1,0 +1,73 @@
+그래프 표현 방법
+
+Adjacency List (인접리스트)
+A (점): B , C , E (선)
+B : A , C
+C : A , B , D , E
+D : C
+E : A , C
+
+점과 선으로 이루어져 있음
+
+V = { A,B,C,D,E } 버텍스,엣지
+E = {[A,B], [A,C] .... }
+
+Adjacency Matrix (인접행렬)
+
+   A  B  C  D  E
+ A 0  1  1  0  1
+ B 1  0  1  0  0
+ C 1  1  0  1  1
+ D 0  0  1  0  0
+ E 1  0  1  0  0
+
+인접리스트와 인접행렬의 차이
+
+dense , sparse 용어
+
+인접행렬 사용할 경우 엣지는 많지만 연결된 선이 1개있을경우 전부 0 이지만 한개만 1이면
+dense 하다 (거의 전부 1이고 몇개만 0 ) sparse 하다 ( 전부0인데 몇개만 1) 
+
+dense 할때는 인접행렬이 유리
+sparse 할때는 인접리스트가 유리
+
+매트릭스의 장점은 바로 값을 찾을수 있다(인덱스로 접근)
+
+
+directed graph (방향성을 갖음)
+
+undirected graph (방향성을 갖지 않음)
+
+code
+
+a = Vertex('A')
+b =Vertex('B')
+c = Vertex('C')
+d = Vertex('D')
+e = Vertex('E')
+버텍스를 만든다
+
+a.add.neighbors([b,c,e])
+a.add.neighbors([a,c])
+a.add.neighbors([b,d,a,e])
+a.add.neighbors([c])
+a.add.neighbors([a,c])
+
+버텍스끼리 연결한다
+
+g = Graph()
+g.add.vertices{(a,b,c,d,e,)}
+g.add.edge(b,d)
+
+
+
+
+
+
+
+
+
+
+
+
+
