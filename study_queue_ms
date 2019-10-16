@@ -1,0 +1,91 @@
+큐 클래스를 
+
+https://www.youtube.com/watch?v=W3jNbNGyjMs&t=75s
+
+영상을 그대로 작성하면서 주석을 달면서 공부하였음.
+
+import java.util.NoSuchElementException;
+
+class Queue<T> {
+
+    class Node<T> {
+        private T data;
+        private Node<T> next;
+
+        public Node(T data) {
+            this.data = data;
+        }
+    }
+
+    private Node<T> first;
+    private Node<T> last;
+    //큐에 데이터 삽입
+    public void add(T item) {
+        //T형 데이터를 담는 노드 생성
+        Node<T> t = new Node<T>(item);
+
+        //데이터가 1개 이상 있을경우
+        if(last != null) {
+            //마지막 노드의 다음노드로 생성한 t를 참조하게한다.
+            last.next = t;
+        }
+        //데이터를 넣었으므로 마지막노드는 t가 된다.
+        last = t;
+        //데이터를 처음넣는경우 first 가 null 인데 first 에 last를 넣음.
+        if(first == null) {
+            first = last;
+        }
+    }
+
+    //큐에서 맨앞 데이터 삭제
+    public T remove() {
+        //큐가 비어있는 경우
+        if(first == null) {
+            throw new NoSuchElementException();
+        }
+
+        //맨 앞에있는 data return하기 위해
+        T data = first.data;
+        //첫번째 데이터를 가리키는 참조변수가 first.next를 가리키게
+        //함으로써 데이터를 삭제한다
+        first = first.next;
+
+        //첫번째 데이터가 비어있을경우(데이터가 1개 남아있을경우)
+       if(first == null) {
+           //마지막 데이터를 지워준다
+            last = null;
+        }
+        return data;
+    }
+
+    //
+    public T peek() {
+        if(first == null) {
+            throw new NoSuchElementException();
+        }
+
+        return first.data;
+    }
+
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Queue<Integer> q = new Queue<Integer>();
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        q.add(4);
+
+        System.out.println(q.remove());
+        System.out.println(q.remove());
+        System.out.println(q.peek());
+        System.out.println(q.remove());
+        System.out.println(q.isEmpty());
+    }
+}
+
