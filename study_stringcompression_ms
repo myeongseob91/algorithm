@@ -1,1 +1,38 @@
+//마지막인덱스때문에 소스가 더럽다.
 
+public class StringCompression {
+    public static void main(String[] args) {
+        //aaabbcccccdddd -> a3b2c5d4
+        //완성된 결과를 붙여나갈 변수
+        String str = "aaabbcccccdddd";
+        StringBuffer resultSb = new StringBuffer();
+
+        char currentChar = ' ';
+        int currentCharIndex = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            currentChar = str.charAt(i);
+
+                if(i == str.length()-1) {
+                    resultSb.append(currentChar);
+                    resultSb.append(currentCharIndex+1);
+
+
+                    currentCharIndex = 0;
+                    break;
+                }
+                if (currentChar == str.charAt(i + 1) ) {
+                    currentCharIndex++;
+                } else {
+                    resultSb.append(currentChar);
+                    resultSb.append(currentCharIndex+1);
+
+                    currentChar = str.charAt(i + 1);
+                    currentCharIndex = 0;
+                }
+
+
+        }
+        System.out.println(resultSb);
+    }
+}
