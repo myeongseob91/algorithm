@@ -1,0 +1,77 @@
+-정답 제출시 패키지명 넣거나 클래스명칭 바꾸지 않으면 컴파일에러,런타임에러 발생
+정렬문제
+SELECTION SORT로 풀었으나 시간초과
+정렬 방법을 바꿔서 다시 풀어야겠다..
+
+package algo;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class sortXY {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//input
+		int pointCount = sc.nextInt();
+		sc.nextLine();
+		ArrayList<String> xyArray = new ArrayList<>();
+		for (int i = 0; i < pointCount; i++) {
+			String str = sc.nextLine();
+			
+			
+			int x = Integer.parseInt(str.split(" ")[0]);
+			int y = Integer.parseInt(str.split(" ")[1]);
+			
+			
+			
+			String xy = x+" "+y;
+			xyArray.add(xy);
+		}
+		//sort
+		sort(xyArray);
+		
+		//print
+		print(xyArray);
+		
+	}
+	
+	public static void sort(ArrayList<String> list) {
+		String temp;
+		int min;
+		for (int i = 0; i <list.size()-1; i++) {
+			min = i;
+			for (int j = i+1; j < list.size(); j++) {
+				int fixX = Integer.parseInt(list.get(min).split(" ")[0]);
+				int fixY = Integer.parseInt(list.get(min).split(" ")[1]);
+				
+				int x = Integer.parseInt(list.get(j).split(" ")[0]);
+				int y = Integer.parseInt(list.get(j).split(" ")[1]);
+				
+				if(fixX == x ) {
+					//x 좌표가 같은 경우
+					if(fixY > y) {
+						min = j;
+					}
+				} else {
+					if(fixX > x) {
+						min = j;
+					}
+				}
+				
+			}
+			
+			temp = list.get(min);
+			list.set(min, list.get(i));
+			list.set(i, temp);
+			
+		}
+	}
+	
+	public static void print(ArrayList<String> list) {
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+	}
+}
+
