@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("dd");
         Scanner sc = new Scanner(System.in);
         String S = sc.nextLine();
         char[] alpabat = new char[26];
